@@ -3,11 +3,12 @@
   <ul>
     <li>
       <app-user
-        [id]="users[0].id"
-        [name]="users[0].name"
-        [avatar]="users[0].avatar"
+        [user]="users[0]"
         (select)="onSelectUser($event)"
       />
-    </li>
+    </li>    
   </ul>
+  <section>
+   <app-task name='{{ selectedUserName?.name }}'></app-task>
+  </section>
 </main>
