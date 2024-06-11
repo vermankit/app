@@ -1,14 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { TaskitemComponent } from '../taskitem/taskitem.component';
+import { Task, TaskitemComponent } from '../taskitem/taskitem.component';
 import { dummyTasks } from '../dummy-task';
 
-type Task = {
-  id:string;
-  userId: string;
-  title: string;
-  summary: string;
-  dueDate: string;
-};
+
 
 @Component({
   selector: 'app-task',

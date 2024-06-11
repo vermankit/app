@@ -11,7 +11,7 @@
     }    
   </ul>
   @if(selectedUserName){   
-      <app-task userId="{{selectedUserName.id}}" name='{{ selectedUserName.name }}'></app-task>
+      <app-task [userId]="selectedUserName.id" [name]="selectedUserName.name"></app-task>
   }
   @else {
     <section>
