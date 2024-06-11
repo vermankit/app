@@ -1,14 +1,22 @@
 <app-header />
 <main>
   <ul>
-    <li>
-      <app-user
-        [user]="users[0]"
-        (select)="onSelectUser($event)"
-      />
-    </li>    
+    @for (user of users; track user.id) {
+      <li>
+        <app-user
+          [user]="user"
+          (select)="onSelectUser($event)"
+        />
+      </li>   
+    }    
   </ul>
-  <section>
-   <app-task name='{{ selectedUserName?.name }}'></app-task>
-  </section>
+  @if(selectedUserName){   
+      <app-task userId="{{selectedUserName.id}}" name='{{ selectedUserName.name }}'></app-task>
+  }
+  @else {
+    <section>
+     <span>Please select user</span>
+     </section>
+  }
+ 
 </main>
