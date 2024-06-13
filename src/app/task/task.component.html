@@ -6,19 +6,16 @@
     <button (click)="onAddClick()">Add Task</button>
   </menu>
   @if (addNewTask) {
-    <app-new-task  (cancel)="cancelClick()" 
-    (add)="onAdd($event)"
+    <app-new-task 
+    [userId]="userId" 
+    (cancel)="cancelClick()"     
     ></app-new-task>
   }
   <ul>
     @for (task of selectedTask; track task.id) {
       <li>
-         <app-taskitem [taskItem]="task"  
-         (complete)="onComplete($event)"         
-         />
+         <app-taskitem [taskItem]="task" />
       </li>
     }   
   </ul>
-
-
 </section>
