@@ -3,13 +3,22 @@
     <h2>{{ name }}'s Tasks</h2>
   </header>
   <menu>
-    <button>Add Task</button>
+    <button (click)="onAddClick()">Add Task</button>
   </menu>
+  @if (addNewTask) {
+    <app-new-task  (cancel)="cancelClick()" 
+    (add)="onAdd($event)"
+    ></app-new-task>
+  }
   <ul>
     @for (task of selectedTask; track task.id) {
       <li>
-         <app-taskitem [taskItem]="task"/>
-       </li>
+         <app-taskitem [taskItem]="task"  
+         (complete)="onComplete($event)"         
+         />
+      </li>
     }   
   </ul>
+
+
 </section>

@@ -5,6 +5,6 @@
   <time datetime=""> {{ taskItem.dueDate }}</time>
   <p>{{ taskItem.summary }}</p>
   <p class="actions">
-    <button>Complete</button>
+    <button (click)="onCompleteClick()">Complete</button>
   </p>
 </article>
